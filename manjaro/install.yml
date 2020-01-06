@@ -14,6 +14,7 @@
       - yay
       - code
       - libdbusmenu-glib
+      - qbittorent
       - fish
     state: present
 
