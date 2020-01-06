@@ -1,0 +1,10 @@
+---
+- hosts: manjaro
+  become: yes
+  vars:
+    - ansible_python_interpreter: /usr/bin/python
+
+  tasks:
+    - include: install.yml
+    - include: docker.yml
+  

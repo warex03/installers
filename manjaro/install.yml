@@ -1,0 +1,27 @@
+---
+- name: Update packages
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install dev essentials
+  pacman:
+    name:
+      - base-devel
+      - vim
+      - wget
+      - yajl
+      - yay
+      - code
+      - libdbusmenu-glib
+      - fish
+    state: present
+
+- name: Install pip packages
+  become: no
+  pip:
+    name: awscli
+    extra_args: "--upgrade --user"
+
+- name: Make fish default shell
+  shell: "chsh -s /bin/fish"
