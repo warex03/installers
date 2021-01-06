@@ -18,6 +18,9 @@
       - fish
     state: present
 
+- name: Install fonts
+  shell: "yay -S nerd-fonts-complete"
+
 - name: Install pip packages
   become: no
   pip:
